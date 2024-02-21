@@ -1,0 +1,7 @@
+# Full values file:
+# https://artifacthub.io/packages/helm/spot/ocean-kubernetes-controller?modal=values
+
+spotinst:
+  token: "your-token"
+  account: "your-account"
+  clusterIdentifier: "your-cluster-identifier"
