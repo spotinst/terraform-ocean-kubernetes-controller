@@ -1,3 +1,27 @@
+# Spot Ocean Kubernetes Controller Terraform Module
+
+A Terraform module to install the Ocean Controller on Kubernetes.
+
+## Usage
+
+```hcl
+module "ocean-kubernetes-controller" {
+  source = "spotinst/ocean-kubernetes-controller/spotinst"
+
+  # Credentials.
+  spotinst_token   = var.spotinst_token
+  spotinst_account = var.spotinst_account
+
+  # Configuration.
+  cluster_identifier = var.cluster_identifier
+}
+```
+
+## Examples
+
+- [Backwards Compatible Installation](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/example/backwards-compatible-installation)
+- [Values File Installation](https://github.com/spotinst/terraform-spotinst-ocean-controller/tree/main/example/values-file-installation)
+
 ## Requirements
 
 | Name | Version |
@@ -19,7 +43,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [helm_release.ocean_controller](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [helm_release.ocean-kubernetes-controller](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 
 ## Inputs
 
@@ -55,3 +79,28 @@ No modules.
 ## Outputs
 
 No outputs.
+
+## Documentation
+
+If you're new to [Spot](https://spot.io/) and want to get started, please checkout our [Getting Started](https://docs.spot.io/connect-your-cloud-provider/) guide, available on the [Spot Documentation](https://docs.spot.io/) website.
+
+## Getting Help
+
+We use GitHub issues for tracking bugs and feature requests. Please use these community resources for getting help:
+
+- Ask a question on [Stack Overflow](https://stackoverflow.com/) and tag it with [terraform-spotinst](https://stackoverflow.com/questions/tagged/terraform-spotinst/).
+- Join our [Spot](https://spot.io/) community on [Slack](http://slack.spot.io/).
+- Open an issue.
+
+## Community
+
+- [Slack](http://slack.spot.io/)
+- [Twitter](https://twitter.com/spot_hq/)
+
+## Contributing
+
+Please see the [contribution guidelines](.github/CONTRIBUTING.md).
+
+## License
+
+Code is licensed under the [Apache License 2.0](LICENSE).

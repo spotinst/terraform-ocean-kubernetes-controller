@@ -13,9 +13,8 @@ module "ocean_controller" {
 
   # Configuration
   cluster_identifier = var.cluster_identifier
-  deploy_metrics_server = false
 
-  # image_pull_secrets = [ "bla", "blip" ]
+  # image_pull_secrets = [ "test1", "test2" ]
   
   # resources_limits = {
   #   cpu    = "1200m"

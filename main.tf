@@ -3,13 +3,7 @@ locals {
   repository = "https://charts.spot.io"
 }
 
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
-
-resource "helm_release" "ocean_controller" {
+resource "helm_release" "ocean-kubernetes-controller" {
   # Whether to create the Ocean Controller
   count = var.create_controller ? 1 : 0
 
