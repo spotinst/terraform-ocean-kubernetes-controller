@@ -10,4 +10,5 @@ module "ocean_controller" {
   release_name = "test-terraform"
 
   values_file = "./values.yaml"
+
 }
