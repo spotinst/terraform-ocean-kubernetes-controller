@@ -8,7 +8,9 @@ content: |-
   ```hcl
   module "ocean-kubernetes-controller" {
       source = "spotinst/ocean-kubernetes-controller/spotinst"
-  
+
+
+
       # Credentials.
       spotinst_token   = var.spotinst_token
       spotinst_account = var.spotinst_account
