@@ -1,3 +1,4 @@
+<!-- BEGIN_TF_DOCS -->
 # Spot Ocean Kubernetes Controller Terraform Module
 
 A Terraform module to install the Ocean Controller on Kubernetes.
@@ -22,28 +23,7 @@ module "ocean-kubernetes-controller" {
 - [Backwards Compatible Installation](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/example/backwards-compatible-installation)
 - [Values File Installation](https://github.com/spotinst/terraform-spotinst-ocean-controller/tree/main/example/values-file-installation)
 
-## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.12.1 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.12.1 |
-
-## Modules
-
-No modules.
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [helm_release.ocean-kubernetes-controller](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 
 ## Inputs
 
@@ -75,10 +55,17 @@ No modules.
 | <a name="input_spotinst_token"></a> [spotinst\_token](#input\_spotinst\_token) | Specifies the Spot Personal Access token | `string` | `null` | no |
 | <a name="input_tolerations"></a> [tolerations](#input\_tolerations) | Specifies a list of additional `toleration` objects | `list(any)` | `null` | no |
 | <a name="input_values_file"></a> [values\_file](#input\_values\_file) | values.yaml file to be used for the Ocean Controller | `string` | `null` | no |
+## Providers
 
-## Outputs
+| Name | Version |
+|------|---------|
+| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.12.1 |
+## Requirements
 
-No outputs.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.12.1 |
 
 ## Documentation
 
@@ -104,3 +91,4 @@ Please see the [contribution guidelines](.github/CONTRIBUTING.md).
 ## License
 
 Code is licensed under the [Apache License 2.0](LICENSE).
+<!-- END_TF_DOCS -->

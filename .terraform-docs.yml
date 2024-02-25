@@ -23,7 +23,11 @@ content: |-
   - [Backwards Compatible Installation](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/example/backwards-compatible-installation)
   - [Values File Installation](https://github.com/spotinst/terraform-spotinst-ocean-controller/tree/main/example/values-file-installation)
 
-  {{ .Content }}
+  {{ .Header }}
+  {{ .Footer }}
+  {{ .Inputs }}
+  {{ .Providers }}
+  {{ .Requirements }}
 
   ## Documentation
 
