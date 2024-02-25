@@ -7,14 +7,14 @@ A Terraform module to install the Ocean Controller on Kubernetes.
 
 ```hcl
 module "ocean-kubernetes-controller" {
-source = "spotinst/ocean-kubernetes-controller/spotinst"
+  source = "spotinst/ocean-kubernetes-controller/spotinst"
 
-# Credentials.
-spotinst_token   = var.spotinst_token
-spotinst_account = var.spotinst_account
+  # Credentials.
+  spotinst_token   = var.spotinst_token
+  spotinst_account = var.spotinst_account
 
-# Configuration.
-cluster_identifier = var.cluster_identifier
+  # Configuration.
+  cluster_identifier = var.cluster_identifier
 }
 ```
 
