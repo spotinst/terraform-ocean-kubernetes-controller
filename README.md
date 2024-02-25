@@ -1,4 +1,3 @@
-<!-- BEGIN_TF_DOCS -->
 # Spot Ocean Kubernetes Controller Terraform Module
 
 A Terraform module to install the Ocean Controller on Kubernetes.
@@ -23,8 +22,7 @@ module "ocean-kubernetes-controller" {
 - [Backwards Compatible Installation](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/example/backwards-compatible-installation)
 - [Values File Installation](https://github.com/spotinst/terraform-spotinst-ocean-controller/tree/main/example/values-file-installation)
 
-
-
+<!-- BEGIN_TF_DOCS -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -66,6 +64,7 @@ module "ocean-kubernetes-controller" {
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.12.1 |
+<!-- END_TF_DOCS -->
 
 ## Documentation
 
@@ -91,4 +90,3 @@ Please see the [contribution guidelines](.github/CONTRIBUTING.md).
 ## License
 
 Code is licensed under the [Apache License 2.0](LICENSE).
-<!-- END_TF_DOCS -->
