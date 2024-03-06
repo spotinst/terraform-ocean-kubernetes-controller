@@ -4,7 +4,7 @@ provider "helm" {
   }
 }
 
-module "ocean_controller" {
+module "kubernetes-controller" {
   source = "../.."
 
   # Credentials
