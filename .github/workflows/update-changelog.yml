@@ -1,0 +1,44 @@
+name: Update Changelog
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  update-changelog:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
+      with:
+          image: quay.io/git-chglog/git-chglog:latest
+          options: -v ${{ github.workspace }}:/workdir
+          run: git-chglog -o CHANGELOG.md
+
+    - name: Generate version bump commit
+      run: |
+        git config user.name ${{ github.actor }}
+        git config user.email '${{ github.actor }}@users.noreply.github.com'
+        git commit -a -m "Update changelog for ${{ github.ref }}"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Create Pull Request
+      id: cpr
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: '[chore] Update Changelog'
+        branch: update-changelog-${{ github.ref }}
+        delete-branch: true
+        labels: update-changelog
+
+    - name: Merge
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --repo ${{github.repository}} \
+          --admin --delete-branch --body "update changelog ${{ github.ref }}" -s
