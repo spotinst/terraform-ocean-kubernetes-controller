@@ -38,7 +38,7 @@ jobs:
 
     - name: Merge
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.APPROVER_PAT }}
       run: |
         gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --repo ${{github.repository}} \
           --admin --delete-branch --body "update changelog ${{ github.ref }}" -s
