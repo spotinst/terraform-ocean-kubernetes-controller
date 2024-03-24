@@ -49,3 +49,33 @@ jobs:
         draft: false
         commitish: main # use the latest commit on main branch (including the new version)
         prerelease: false
+
+  update-changelog:
+    needs: create-new-release
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        fetch-tags: true
+
+    - name: Run make generate
+      run: make generate
+
+    - name: Generate version bump commit
+      run: |
+        git config user.name ${{ github.actor }}
+        git config user.email '${{ github.actor }}@users.noreply.github.com'
+        git commit -a -m "Update changelog for ${{ github.ref }}"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create Pull Request
+      id: cpr
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: '[chore] Update Changelog'
+        branch: update-changelog
+        delete-branch: true
+        labels: update-changelog

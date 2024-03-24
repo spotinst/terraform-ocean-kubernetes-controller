@@ -3,7 +3,7 @@
 .PHONY: generate
 generate:
 	@echo "Generating README..."
-	@docker run --rm --volume "$(shell pwd):/terraform-docs" quay.io/terraform-docs/terraform-docs:0.17.0 markdown table /terraform-docs
+	@docker run --rm -v "$(shell pwd):/terraform-docs" quay.io/terraform-docs/terraform-docs:0.17.0 markdown table /terraform-docs
 	@echo "Generating CHANGELOG..."
-	@docker run -v "$(shell pwd):/workdir" quay.io/git-chglog/git-chglog -o CHANGELOG.md
+	@docker run --rm -v "$(shell pwd):/workdir" quay.io/git-chglog/git-chglog -o CHANGELOG.md
 
