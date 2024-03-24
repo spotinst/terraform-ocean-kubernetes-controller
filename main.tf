@@ -11,6 +11,7 @@ resource "helm_release" "ocean-kubernetes-controller" {
   chart      = local.chart
   version    = var.chart_version
   repository = local.repository
+  wait       = false
 
   name             = var.release_name
   namespace        = var.namespace
@@ -101,6 +102,14 @@ resource "helm_release" "ocean-kubernetes-controller" {
     content {
       name  = "spotinst.disableAutoUpdate"
       value = var.disable_auto_update
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.disable_rightsizing != null ? [1] : []
+    content {
+      name  = "spotinst.disableAutomaticRightSizing"
+      value = var.disable_rightsizing
     }
   }
 
