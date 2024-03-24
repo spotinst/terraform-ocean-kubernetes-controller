@@ -57,21 +57,3 @@ jobs:
         branch: release
         delete-branch: true
         labels: release_auto_version_bump
-
-    - name: Merge
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --repo ${{github.repository}} \
-          --admin --delete-branch --body "version bump ${{ steps.next-version.outputs.VALUE }}" -s
-
-    - name: Create GitHub Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ steps.next-version.outputs.VALUE }}
-        release_name: ${{ steps.next-version.outputs.VALUE }}
-        draft: false
-        commitish: main # use the latest commit on main branch (including the new version)
-        prerelease: false

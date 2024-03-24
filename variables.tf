@@ -1,7 +1,7 @@
 variable "chart_version" {
   type        = string
   description = "Specifies the version of the Helm chart to be installed"
-  default     = "0.1.22"
+  default     = "0.1.31"
   nullable    = false
 }
 
@@ -93,6 +93,12 @@ variable "enable_csr_approval" {
 variable "disable_auto_update" {
   type        = bool
   description = "Controls whether the auto-update feature should be disabled"
+  default     = true
+}
+
+variable "disable_rightsizing" {
+  type        = bool
+  description = "Controls whether the rightsizing feature should be disabled"
   default     = false
 }
 

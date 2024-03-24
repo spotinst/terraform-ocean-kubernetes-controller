@@ -35,10 +35,3 @@ jobs:
         branch: update-changelog-${{ github.ref }}
         delete-branch: true
         labels: update-changelog
-
-    - name: Merge
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        gh pr merge ${{ steps.cpr.outputs.pull-request-number }} --repo ${{github.repository}} \
-          --admin --delete-branch --body "update changelog ${{ github.ref }}" -s
