@@ -21,7 +21,10 @@ jobs:
 
     - name: Get previous version
       id: previous-version
-      run: echo "VALUE=$(cat VERSION)" >> $GITHUB_OUTPUT
+      run: |
+        VERSION=`curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest | jq -r '.tag_name'`
+        echo "got version $VERSION"
+        echo "VALUE=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Get next release version
       id: next-version
@@ -36,24 +39,13 @@ jobs:
         output=$(IFS=. ; echo "${array[*]}")
         echo "VALUE=$output" >> $GITHUB_OUTPUT
 
-    - name: Bump version
-      run: |
-        echo "${{ steps.next-version.outputs.VALUE }}" > VERSION
-
-    - name: Generate version bump commit
-      run: |
-        git config user.name ${{ github.actor }}
-        git config user.email '${{ github.actor }}@users.noreply.github.com'
-        git commit -a -m "version bump ${{ steps.next-version.outputs.VALUE }}"
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Create Pull Request
-      id: cpr
-      uses: peter-evans/create-pull-request@v4
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        title: '[skip ci] Release'
-        branch: release
-        delete-branch: true
-        labels: release_auto_version_bump
+        tag_name: ${{ steps.next-version.outputs.VALUE }}
+        release_name: ${{ steps.next-version.outputs.VALUE }}
+        draft: false
+        commitish: main # use the latest commit on main branch (including the new version)
+        prerelease: false
