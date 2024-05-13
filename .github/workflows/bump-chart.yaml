@@ -1,0 +1,58 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      chart-version:
+        description: 'The new chart version'
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      chart-version:
+        description: 'The new chart version'
+        required: true
+        type: string
+    secrets:
+      token:
+        description: 'The github token to use to create the PR'
+        required: true
+
+jobs:
+  update-app-version:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update version
+        uses: actions/github-script@v7
+        env:
+          NEW_VERSION: ${{ inputs.chart-version }}
+        with:
+          script: |
+            const fs = require('fs');
+            const file = fs.readFileSync('variables.tf', 'utf8');
+            const lines = file.split('\n');
+            const chartVersionLine = lines.findIndex(line => line.includes('chart_version'));
+            const versionLine = lines.findIndex((line, i) => line.includes('default') && i > chartVersionLine);
+            const oldVersion = lines[versionLine].match(/"([^"]+)"/)[1];
+            const newVersion = process.env.NEW_VERSION;
+            lines[versionLine] = lines[versionLine].replace(oldVersion, newVersion);
+            fs.writeFileSync('variables.tf', lines.join('\n'));
+            console.log(`updated version from ${oldVersion} to ${newVersion}`);
+
+      - name: Generate version bump commit
+        run: |
+          git config user.name ${{ github.actor }}
+          git config user.email '${{ github.actor }}@users.noreply.github.com'
+          git commit -a -m "bump chart version to '${{ inputs.chart-version }}'"
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ github.token }}
+          title: '[bump] chart - ${{ inputs.chart-version }}'
+          branch: bump/chart_${{ inputs.chart-version }}
+          delete-branch: true
+          labels: auto_version_bump
