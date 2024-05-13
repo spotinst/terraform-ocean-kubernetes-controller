@@ -1,4 +1,4 @@
-name: Create Release
+name: Bump Chart Version
 
 on:
   workflow_dispatch:
