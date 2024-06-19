@@ -40,6 +40,9 @@ jobs:
       - name: Validate version
         if: ${{ !inputs.skip-version-validation }}
         run: |
+          helm repo add spot https://charts.spot.io
+          helm repo update
+
           if [[ $(helm search repo spot/ocean-kubernetes-controller --version ${{ inputs.chart-version }}) == "No results found" ]]; then
             echo "Chart version ${{ inputs.chart-version }} not found in the repository"
             exit 1
