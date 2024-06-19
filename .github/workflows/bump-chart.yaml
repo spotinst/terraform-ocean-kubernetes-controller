@@ -7,12 +7,22 @@ on:
         description: 'The new chart version'
         required: true
         type: string
+      skip-version-validation:
+        description: 'Should skip chart version validation'
+        required: true
+        default: false
+        type: boolean
   workflow_call:
     inputs:
       chart-version:
         description: 'The new chart version'
         required: true
         type: string
+      skip-version-validation:
+        description: 'Should skip chart version validation'
+        required: true
+        default: false
+        type: boolean
     secrets:
       token:
         description: 'The github token to use to create the PR'
@@ -23,6 +33,17 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - uses: azure/setup-helm@v4.1.0
+        with:
+          version: v3.12.1
+
+      - name: Validate version
+        if: ${{ !inputs.skip-version-validation }}
+        run: |
+          if [[ $(helm search repo spot/ocean-kubernetes-controller --version ${{ inputs.chart-version }}) == "No results found" ]]; then
+            echo "Chart version ${{ inputs.chart-version }} not found in the repository"
+            exit 1
+          fi
 
       - name: Update version
         uses: actions/github-script@v7
