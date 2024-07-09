@@ -1,7 +1,12 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- fix: Change 'enable_csr_approval' to be true by default
+
+
+<a name="v0.0.8"></a>
+## [v0.0.8] (July 9, 2024)
+
+- fix: Change 'enable_csr_approval' to be true by default ([#31](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/31))
 - chore: Update changelog for refs/heads/main ([#30](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/30))
 
 
