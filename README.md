@@ -39,7 +39,7 @@ module "kubernetes-controller" {
 | <a name="input_deploy_metrics_server"></a> [deploy\_metrics\_server](#input\_deploy\_metrics\_server) | Controls whether the metrics server should be deployed | `bool` | `false` | no |
 | <a name="input_disable_auto_update"></a> [disable\_auto\_update](#input\_disable\_auto\_update) | Controls whether the auto-update feature should be disabled | `bool` | `true` | no |
 | <a name="input_disable_rightsizing"></a> [disable\_rightsizing](#input\_disable\_rightsizing) | Controls whether the rightsizing feature should be disabled | `bool` | `false` | no |
-| <a name="input_enable_csr_approval"></a> [enable\_csr\_approval](#input\_enable\_csr\_approval) | Controls whether the CSR approval feature should be enabled | `bool` | `false` | no |
+| <a name="input_enable_csr_approval"></a> [enable\_csr\_approval](#input\_enable\_csr\_approval) | Controls whether the CSR approval feature should be enabled | `bool` | `true` | no |
 | <a name="input_image_pull_policy"></a> [image\_pull\_policy](#input\_image\_pull\_policy) | Specifies the image pull policy (one of: Always, Never, IfNotPresent) | `string` | `"Always"` | no |
 | <a name="input_image_pull_secrets"></a> [image\_pull\_secrets](#input\_image\_pull\_secrets) | Specifies a list of references to secrets in the same namespace to use for pulling the image | `list(string)` | `[]` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Specifies the namespace where the Ocean Controller should be deployed | `string` | `"spot-system"` | no |

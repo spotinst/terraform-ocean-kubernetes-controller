@@ -87,7 +87,7 @@ variable "proxy_url" {
 variable "enable_csr_approval" {
   type        = bool
   description = "Controls whether the CSR approval feature should be enabled"
-  default     = false
+  default     = true
 }
 
 variable "disable_auto_update" {
