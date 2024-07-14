@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- chore: bump chart version to '0.1.50'
+- fix: CI workflow ([#34](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/34))
+- chore: Update changelog for refs/heads/main ([#32](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/32))
 
 
 <a name="v0.0.8"></a>
