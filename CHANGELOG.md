@@ -1,7 +1,12 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- chore: bump chart version to '0.1.50'
+
+
+<a name="v0.0.9"></a>
+## [v0.0.9] (July 14, 2024)
+
+- chore: bump chart version to '0.1.50' ([#35](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/35))
 - fix: CI workflow ([#34](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/34))
 - chore: Update changelog for refs/heads/main ([#32](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/32))
 
