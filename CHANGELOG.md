@@ -3,6 +3,13 @@
 
 
 
+<a name="v0.0.10"></a>
+## [v0.0.10] (July 28, 2024)
+
+- fix spotinst token exposure by using set_sensitive ([#37](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/37))
+- chore: Update changelog for refs/heads/main ([#36](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/36))
+
+
 <a name="v0.0.9"></a>
 ## [v0.0.9] (July 14, 2024)
 
