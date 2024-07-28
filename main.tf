@@ -25,7 +25,7 @@ resource "helm_release" "ocean-kubernetes-controller" {
   ]
 
   # ...Or set values directly from variables
-  dynamic "set" {
+  dynamic "set_sensitive" {
     for_each = var.spotinst_token != null ? [1] : []
     content {
       name  = "spotinst.token"
