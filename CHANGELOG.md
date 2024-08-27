@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- fix: unlocked helm provider version
+- chore: Update changelog for refs/heads/main ([#43](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/43))
 
 
 <a name="v0.0.12"></a>
