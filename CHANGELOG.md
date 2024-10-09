@@ -1,6 +1,7 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- feature: Add option to enable wait for helm\_release to deploy
 
 
 <a name="v0.0.14"></a>
