@@ -214,3 +214,9 @@ variable "deploy_metrics_server" {
   description = "Controls whether the metrics server should be deployed"
   default     = false
 }
+
+variable "wait" {
+  type        = bool
+  description = "Controls whether to wait for helm_release to deploy"
+  default     = false
+}
