@@ -176,4 +176,12 @@ resource "helm_release" "ocean-kubernetes-controller" {
       value = var.deploy_metrics_server
     }
   }
+
+  dynamic "set" {
+    for_each = var.replicas != null ? [1] : []
+    content {
+      name  = "replicas"
+      value = var.replicas
+    }
+  }
 }
