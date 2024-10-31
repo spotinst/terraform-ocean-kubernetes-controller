@@ -12,6 +12,12 @@ variable "release_name" {
   nullable    = false
 }
 
+variable "wait" {
+  type        = bool
+  description = "Controls whether to wait for Helm release to deploy"
+  default     = false
+}
+
 variable "values_file" {
   type        = string
   description = "values.yaml file to be used for the Ocean Controller"
@@ -215,8 +221,8 @@ variable "deploy_metrics_server" {
   default     = false
 }
 
-variable "wait" {
-  type        = bool
-  description = "Controls whether to wait for helm_release to deploy"
-  default     = false
+variable "replicas" {
+  type        = number
+  description = "Controls number of replicas"
+  default     = null
 }
