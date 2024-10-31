@@ -11,7 +11,7 @@ resource "helm_release" "ocean-kubernetes-controller" {
   chart      = local.chart
   version    = var.chart_version
   repository = local.repository
-  wait       = false
+  wait       = var.wait
 
   name             = var.release_name
   namespace        = var.namespace
@@ -174,6 +174,14 @@ resource "helm_release" "ocean-kubernetes-controller" {
     content {
       name  = "metrics-server.deployChart"
       value = var.deploy_metrics_server
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.replicas != null ? [1] : []
+    content {
+      name  = "replicas"
+      value = var.replicas
     }
   }
 }

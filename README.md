@@ -46,6 +46,7 @@ module "kubernetes-controller" {
 | <a name="input_node_selector"></a> [node\_selector](#input\_node\_selector) | Specifies the node selector which must match a node's labels for the Ocean Controller resources to be scheduled on that node | `map(string)` | `null` | no |
 | <a name="input_proxy_url"></a> [proxy\_url](#input\_proxy\_url) | Specifies the proxy server URL to communicate through | `string` | `null` | no |
 | <a name="input_release_name"></a> [release\_name](#input\_release\_name) | Specifies the name of the Helm release | `string` | `"ocean-controller"` | no |
+| <a name="input_replicas"></a> [replicas](#input\_replicas) | Controls number of replicas | `number` | `null` | no |
 | <a name="input_resources_limits"></a> [resources\_limits](#input\_resources\_limits) | Specifies the definition of the maximum amount of compute resources allowed | `map(any)` | `null` | no |
 | <a name="input_resources_requests"></a> [resources\_requests](#input\_resources\_requests) | Specifies the definition of the minimum amount of compute resources required | `map(any)` | `null` | no |
 | <a name="input_secret_name"></a> [secret\_name](#input\_secret\_name) | Overrides the default secret name | `string` | `null` | no |
@@ -54,11 +55,12 @@ module "kubernetes-controller" {
 | <a name="input_spotinst_token"></a> [spotinst\_token](#input\_spotinst\_token) | Specifies the Spot Personal Access token | `string` | `null` | no |
 | <a name="input_tolerations"></a> [tolerations](#input\_tolerations) | Specifies a list of additional `toleration` objects | `list(any)` | `null` | no |
 | <a name="input_values_file"></a> [values\_file](#input\_values\_file) | values.yaml file to be used for the Ocean Controller | `string` | `null` | no |
+| <a name="input_wait"></a> [wait](#input\_wait) | Controls whether to wait for Helm release to deploy | `bool` | `false` | no |
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.12.1 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.12.1 |
 ## Requirements
 
 | Name | Version |
