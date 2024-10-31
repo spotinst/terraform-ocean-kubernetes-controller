@@ -3,6 +3,15 @@
 
 
 
+<a name="v0.0.15"></a>
+## [v0.0.15] (October 31, 2024)
+
+- [bump] chart - 0.1.56 ([#50](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/50))
+- Add option to wait for helm_release to deploy ([#48](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/48))
+- ability to set replicas ([#49](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/49))
+- chore: Update changelog for refs/heads/main ([#47](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/47))
+
+
 <a name="v0.0.14"></a>
 ## [v0.0.14] (September 25, 2024)
 
