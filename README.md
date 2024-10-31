@@ -55,6 +55,7 @@ module "kubernetes-controller" {
 | <a name="input_spotinst_token"></a> [spotinst\_token](#input\_spotinst\_token) | Specifies the Spot Personal Access token | `string` | `null` | no |
 | <a name="input_tolerations"></a> [tolerations](#input\_tolerations) | Specifies a list of additional `toleration` objects | `list(any)` | `null` | no |
 | <a name="input_values_file"></a> [values\_file](#input\_values\_file) | values.yaml file to be used for the Ocean Controller | `string` | `null` | no |
+| <a name="input_wait"></a> [wait](#input\_wait) | Controls whether to wait for Helm release to deploy | `bool` | `false` | no |
 ## Providers
 
 | Name | Version |
