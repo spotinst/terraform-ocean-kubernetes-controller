@@ -1,7 +1,7 @@
 variable "chart_version" {
   type        = string
   description = "Specifies the version of the Helm chart to be installed"
-  default     = "0.1.56"
+  default     = "0.1.57"
   nullable    = false
 }
 
