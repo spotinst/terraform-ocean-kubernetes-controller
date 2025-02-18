@@ -1,6 +1,7 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- chore: Update changelog for refs/heads/main
 
 
 <a name="v0.0.18"></a>
