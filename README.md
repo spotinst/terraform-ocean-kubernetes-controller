@@ -29,7 +29,7 @@ module "kubernetes-controller" {
 |------|-------------|------|---------|:--------:|
 | <a name="input_base_url"></a> [base\_url](#input\_base\_url) | Specifies the base URL to be used by the HTTP client | `string` | `null` | no |
 | <a name="input_ca_bundle_secret_name"></a> [ca\_bundle\_secret\_name](#input\_ca\_bundle\_secret\_name) | Overrides the default secret name for custom CA bundle | `string` | `null` | no |
-| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Specifies the version of the Helm chart to be installed | `string` | `"0.1.66"` | no |
+| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Specifies the version of the Helm chart to be installed | `string` | `"0.1.67"` | no |
 | <a name="input_cluster_identifier"></a> [cluster\_identifier](#input\_cluster\_identifier) | Specifies the cluster identifier | `string` | `null` | no |
 | <a name="input_config_map_name"></a> [config\_map\_name](#input\_config\_map\_name) | Overrides the default configmap name | `string` | `null` | no |
 | <a name="input_controller_image"></a> [controller\_image](#input\_controller\_image) | Specifies the Docker image name for the Ocean Controller that should be deployed | `string` | `null` | no |
