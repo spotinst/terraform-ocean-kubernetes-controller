@@ -45,6 +45,7 @@ module "kubernetes-controller" {
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Specifies the namespace where the Ocean Controller should be deployed | `string` | `"spot-system"` | no |
 | <a name="input_node_selector"></a> [node\_selector](#input\_node\_selector) | Specifies the node selector which must match a node's labels for the Ocean Controller resources to be scheduled on that node | `map(string)` | `null` | no |
 | <a name="input_proxy_url"></a> [proxy\_url](#input\_proxy\_url) | Specifies the proxy server URL to communicate through | `string` | `null` | no |
+| <a name="input_readonly_mode"></a> [readonly\_mode](#input\_readonly\_mode) | Controls whether the read-only mode should be enabled | `bool` | `false` | no |
 | <a name="input_release_name"></a> [release\_name](#input\_release\_name) | Specifies the name of the Helm release | `string` | `"ocean-controller"` | no |
 | <a name="input_replicas"></a> [replicas](#input\_replicas) | Controls number of replicas | `number` | `null` | no |
 | <a name="input_resources_limits"></a> [resources\_limits](#input\_resources\_limits) | Specifies the definition of the maximum amount of compute resources allowed | `map(any)` | `null` | no |
@@ -60,13 +61,13 @@ module "kubernetes-controller" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.12.1 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | 3.0.2 |
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 2.12.1 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 3.0.0 |
 <!-- END_TF_DOCS -->
 
 ## Documentation

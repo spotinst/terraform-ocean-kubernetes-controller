@@ -1,6 +1,7 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- chore: Update changelog for refs/heads/main ([#72](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/72))
 
 
 <a name="v0.0.24"></a>
