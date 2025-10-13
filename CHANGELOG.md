@@ -1,8 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- fix: unsupport helm v3 provider
-- chore: support readonly mode
+- chore: Update changelog for refs/heads/main
+
+
+<a name="v0.0.25"></a>
+## [v0.0.25] (October 13, 2025)
+
+- Feat/spotcon 35960 support controller readonly mode ([#73](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/73))
 - chore: Update changelog for refs/heads/main ([#72](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/72))
 
 
