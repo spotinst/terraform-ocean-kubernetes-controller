@@ -108,6 +108,12 @@ variable "disable_rightsizing" {
   default     = false
 }
 
+variable "readonly_mode" {
+  type        = bool
+  description = "Controls whether the read-only mode should be enabled"
+  default     = false
+}
+
 variable "image_pull_secrets" {
   type        = list(string)
   description = "Specifies a list of references to secrets in the same namespace to use for pulling the image"
