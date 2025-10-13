@@ -114,6 +114,14 @@ resource "helm_release" "ocean-kubernetes-controller" {
   }
 
   dynamic "set" {
+    for_each = var.readonly_mode != null ? [1] : []
+    content {
+      name  = "spotinst.readonly"
+      value = var.readonly_mode
+    }
+  }
+
+  dynamic "set" {
     for_each = var.image_pull_secrets
     content {
       name  = "imagePullSecrets[${index(var.image_pull_secrets, set.value)}].name"
