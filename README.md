@@ -57,17 +57,12 @@ module "kubernetes-controller" {
 | <a name="input_tolerations"></a> [tolerations](#input\_tolerations) | Specifies a list of additional `toleration` objects | `list(any)` | `null` | no |
 | <a name="input_values_file"></a> [values\_file](#input\_values\_file) | values.yaml file to be used for the Ocean Controller | `string` | `null` | no |
 | <a name="input_wait"></a> [wait](#input\_wait) | Controls whether to wait for Helm release to deploy | `bool` | `false` | no |
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | 3.0.2 |
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 2.12.1 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 2.12.1, < 3.0 |
 <!-- END_TF_DOCS -->
 
 ## Documentation

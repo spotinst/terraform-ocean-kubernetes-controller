@@ -26,11 +26,12 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Render terraform docs and push changes back to PR
-      uses: terraform-docs/gh-actions@main
+      uses: terraform-docs/gh-actions@v1.4.1
       with:
         config-file: .terraform-docs.yml
         working-dir: .
         output-file: README.md
         output-method: inject
-        git-push: "true"
+        git-push: "false"
+        fail-on-diff: "true"
         git-commit-message: "chore: update terraform docs"

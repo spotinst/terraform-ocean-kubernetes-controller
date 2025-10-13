@@ -1,6 +1,5 @@
 content: |-
   {{ .Inputs }}
-  {{ .Providers }}
   {{ .Requirements }}
 
 output:

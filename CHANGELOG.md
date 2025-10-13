@@ -1,6 +1,8 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- fix: unsupport helm v3 provider
+- chore: support readonly mode
 - chore: Update changelog for refs/heads/main ([#72](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/72))
 
 
