@@ -20,7 +20,11 @@ module "kubernetes-controller" {
 ## Examples
 
 - [Backwards Compatible Installation](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/example/backwards-compatible-installation)
-- [Values File Installation](https://github.com/spotinst/terraform-spotinst-ocean-controller/tree/main/example/values-file-installation)
+- [Values File Installation](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/example/values-file-installation)
+
+## Migrations
+
+- [Migration Guides](https://github.com/spotinst/terraform-ocean-kubernetes-controller/tree/main/docs)
 
 <!-- BEGIN_TF_DOCS -->
 ## Inputs
@@ -61,7 +65,7 @@ module "kubernetes-controller" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.9 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | ~> 3.0 |
 <!-- END_TF_DOCS -->
 
