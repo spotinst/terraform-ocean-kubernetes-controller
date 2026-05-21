@@ -1,9 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- chore: migration docs
-- chore: set terraform version to >= v1.1.0
-- chore: support helm provider >= v3.0.0
+- chore: support helm provider v3.0 and update terraform version ([#85](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/85))
+
+
+<a name="v0.0.30"></a>
+## [v0.0.30] (May 21, 2026)
+
+- chore: bump chart version to '0.1.72' ([#86](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/86))
 - chore: Update changelog for refs/heads/main ([#83](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/83))
 
 
