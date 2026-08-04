@@ -1,8 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-- chore: bump chart version ([#88](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/88))
-- chore: support helm provider v3.0 and update terraform version ([#85](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/85))
+
+
+<a name="v0.0.32"></a>
+## [v0.0.32] (August 4, 2026)
+
+- chore: bump chart version to '0.1.75' ([#92](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/92))
+- chore: Update changelog for refs/heads/main ([#90](https://github.com/spotinst/terraform-ocean-kubernetes-controller/issues/90))
 
 
 <a name="v0.0.31"></a>
