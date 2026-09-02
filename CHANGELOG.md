@@ -1,6 +1,7 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- chore: bump chart version to '0.1.76'
 
 
 <a name="v0.0.32"></a>
