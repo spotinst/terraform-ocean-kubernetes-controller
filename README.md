@@ -42,6 +42,8 @@ module "kubernetes-controller" {
 | <a name="input_enable_csr_approval"></a> [enable\_csr\_approval](#input\_enable\_csr\_approval) | Controls whether the CSR approval feature should be enabled | `bool` | `true` | no |
 | <a name="input_image_pull_policy"></a> [image\_pull\_policy](#input\_image\_pull\_policy) | Specifies the image pull policy (one of: Always, Never, IfNotPresent) | `string` | `"Always"` | no |
 | <a name="input_image_pull_secrets"></a> [image\_pull\_secrets](#input\_image\_pull\_secrets) | Specifies a list of references to secrets in the same namespace to use for pulling the image | `list(string)` | `[]` | no |
+| <a name="input_log_shipping_image"></a> [log\_shipping\_image](#input\_log\_shipping\_image) | Specifies the Docker image name for the log shipping sidecar that should be deployed | `string` | `null` | no |
+| <a name="input_log_shipping_version"></a> [log\_shipping\_version](#input\_log\_shipping\_version) | Specifies the Docker version for the log shipping sidecar that should be deployed | `string` | `null` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Specifies the namespace where the Ocean Controller should be deployed | `string` | `"spot-system"` | no |
 | <a name="input_node_selector"></a> [node\_selector](#input\_node\_selector) | Specifies the node selector which must match a node's labels for the Ocean Controller resources to be scheduled on that node | `map(string)` | `null` | no |
 | <a name="input_proxy_url"></a> [proxy\_url](#input\_proxy\_url) | Specifies the proxy server URL to communicate through | `string` | `null` | no |

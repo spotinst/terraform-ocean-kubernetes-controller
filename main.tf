@@ -66,6 +66,22 @@ resource "helm_release" "ocean-kubernetes-controller" {
   }
 
   dynamic "set" {
+    for_each = var.log_shipping_image != null ? [1] : []
+    content {
+      name  = "logShipping.image.repository"
+      value = var.log_shipping_image
+    }
+  }
+
+  dynamic "set" {
+    for_each = var.log_shipping_version != null ? [1] : []
+    content {
+      name  = "logShipping.image.tag"
+      value = var.log_shipping_version
+    }
+  }
+
+  dynamic "set" {
     for_each = var.image_pull_policy != null ? [1] : []
     content {
       name  = "image.pullPolicy"

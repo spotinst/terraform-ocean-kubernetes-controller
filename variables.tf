@@ -72,6 +72,18 @@ variable "controller_version" {
   default     = null # Do not override chart
 }
 
+variable "log_shipping_image" {
+  type        = string
+  description = "Specifies the Docker image name for the log shipping sidecar that should be deployed"
+  default     = null # Do not override chart
+}
+
+variable "log_shipping_version" {
+  type        = string
+  description = "Specifies the Docker version for the log shipping sidecar that should be deployed"
+  default     = null # Do not override chart
+}
+
 variable "image_pull_policy" {
   type        = string
   description = "Specifies the image pull policy (one of: Always, Never, IfNotPresent)"
